@@ -10,6 +10,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  min-height: 100dvh;
   margin: 0;
 }
 
@@ -32,7 +33,7 @@ h1 {
 }
 
 .scr_span {
-  font-size: clamp(0.75rem, 1.2vw, 2rem);
+  font-size: clamp(0.75rem, 1vw, 2rem);
   font-weight: 600;
   background-color: #0f0;
   color: #000;
@@ -47,7 +48,7 @@ h1 {
 
 .display {
   color: grey;
-  font-size: clamp(0.9rem, 1.4vw, 2.5rem);
+  font-size: clamp(0.9rem, 1.2vw, 2.5rem);
 }
 
 .simon_container {
@@ -131,14 +132,25 @@ button:active {
 }
 
 footer {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0.5rem 2rem;
-  font-size: 0.9rem;
-  color: #111;
+  gap: 0.25rem;
 }
 
-footer small {
+footer * {
   color: #aaa;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
 }
 
 .button_active {
