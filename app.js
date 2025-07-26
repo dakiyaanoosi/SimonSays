@@ -19,7 +19,7 @@ const audio = [
 for (let a of audio) {
   a.load();
 }
-
+let h1 = document.querySelector("h1");
 let button = document.querySelector("button");
 let display = document.querySelector(".display");
 let scr = document.querySelector("#scr");
@@ -47,23 +47,24 @@ document.addEventListener("keydown", function (event) {
 
 document.addEventListener("keyup", function (event) {
   if (event.code === "Enter") {
+    h1.innerText = "Enter";
     button.classList.add("button_active");
     button.classList.remove("button_active");
     button.click();
   } else if (event.code === "KeyR") {
-    display.innerText = "Key Event R";
+    h1.innerText = "Key Event R";
     btns[0].classList.remove("btn_active");
     btns[0].click();
   } else if (event.code === "KeyY") {
-    display.innerText = "Key Event Y";
+    h1.innerText = "Key Event Y";
     btns[1].classList.remove("btn_active");
     btns[1].click();
   } else if (event.code === "KeyB") {
-    display.innerText = "Key Event B";
+    h1.innerText = "Key Event B";
     btns[2].classList.remove("btn_active");
     btns[2].click();
   } else if (event.code === "KeyG") {
-    display.innerText = "Key Event G";
+    h1.innerText = "Key Event G";
     btns[3].classList.remove("btn_active");
     btns[3].click();
   }
@@ -71,18 +72,18 @@ document.addEventListener("keyup", function (event) {
 
 button.addEventListener("click", start);
 button.addEventListener("touchstart", function (event) {
-  display.innerText = "TouchStart";
+  h1.innerText = "TouchStart";
   event.preventDefault();
   button.classList.add("button_active");
 });
 button.addEventListener("touchend", function (event) {
-  display.innerText = "Touchend";
+  h1.innerText = "Touchend";
   event.preventDefault();
   start.call(this, event);
   button.classList.remove("button_active");
 });
 button.addEventListener("touchcancel", function () {
-  display.innerText = "Touchcancel";
+  h1.innerText = "Touchcancel";
   button.classList.remove("button_active");
 });
 
@@ -156,18 +157,18 @@ function buttonFlash(btn) {
 for (let btn of btns) {
   btn.addEventListener("click", userClick);
   btn.addEventListener("touchstart", function (event) {
-    display.innerText = "Touchstart";
+    h1.innerText = "Touchstart";
     event.preventDefault();
     this.classList.add("btn_active");
   });
   btn.addEventListener("touchend", function (event) {
-    display.innerText = "Touchend";
+    h1.innerText = "Touchend";
     event.preventDefault();
     userClick.call(this, event);
     this.classList.remove("btn_active");
   });
   btn.addEventListener("touchcancel", function () {
-    display.innerText = "Touchcancel";
+    h1.innerText = "Touchcancel";
     this.classList.remove("btn_active");
   });
 }
