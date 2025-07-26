@@ -48,7 +48,7 @@ h1 {
 
 .display {
   color: grey;
-  font-size: clamp(0.9rem, 1.2vw, 2.5rem);
+  font-size: clamp(0.9rem, 1.1vw, 2.5rem);
 }
 
 .simon_container {
