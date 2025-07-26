@@ -30,37 +30,26 @@ if (localStorage.getItem("highScore")) {
   hghscr.innerText = `High Score: ${highScore}`;
 }
 
+const keyMap = {
+  Enter: { element: button, class: "button_active" },
+  KeyR: { element: btns[0], class: "btn_active" },
+  KeyY: { element: btns[1], class: "btn_active" },
+  KeyB: { element: btns[2], class: "btn_active" },
+  KeyG: { element: btns[3], class: "btn_active" },
+};
+
 document.addEventListener("keydown", function (event) {
-  if (event.code === "Enter") {
-    button.classList.add("button_active");
-  } else if (event.code === "KeyR") {
-    btns[0].classList.add("btn_active");
-  } else if (event.code === "KeyY") {
-    btns[1].classList.add("btn_active");
-  } else if (event.code === "KeyB") {
-    btns[2].classList.add("btn_active");
-  } else if (event.code === "KeyG") {
-    btns[3].classList.add("btn_active");
+  if (keyMap[event.code]) {
+    const { element, class: cls } = keyMap[event.code];
+    element.classList.add(cls);
   }
 });
 
 document.addEventListener("keyup", function (event) {
-  if (event.code === "Enter") {
-    button.classList.add("button_active");
-    button.classList.remove("button_active");
-    button.click();
-  } else if (event.code === "KeyR") {
-    btns[0].classList.remove("btn_active");
-    btns[0].click();
-  } else if (event.code === "KeyY") {
-    btns[1].classList.remove("btn_active");
-    btns[1].click();
-  } else if (event.code === "KeyB") {
-    btns[2].classList.remove("btn_active");
-    btns[2].click();
-  } else if (event.code === "KeyG") {
-    btns[3].classList.remove("btn_active");
-    btns[3].click();
+  if (keyMap[event.code]) {
+    const { element, class: cls } = keyMap[event.code];
+    element.classList.remove(cls);
+    element.click();
   }
 });
 
@@ -79,7 +68,7 @@ button.addEventListener("touchcancel", function () {
 });
 
 function start(event) {
-  event.preventDefault();
+  if (event) event.preventDefault();
   if (!executing) {
     audio[0].play();
     if (!started) {
@@ -93,7 +82,6 @@ function start(event) {
       }, 1000);
     } else {
       reset();
-      gmOvr = false;
       display.classList.remove("redText");
       display.innerText = "Restarting....";
       executing = true;
@@ -110,13 +98,14 @@ function reset() {
   level = 0;
   gameSeq = [];
   userSeq = [];
+  gmOvr = false;
 }
 
 function levelUp() {
   userSeq = [];
   scoreUpdate();
   display.innerText = `Level ${level}`;
-  let random = Math.floor(Math.random() * 4);
+  const random = Math.floor(Math.random() * 4);
   gameSeq.push(colors[random]);
   buttonFlash(btns[random]);
 }

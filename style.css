@@ -6,6 +6,17 @@
   color: #fff;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+main {
+  flex: 1;
+}
+
 h1 {
   color: #0f0;
   text-align: center;
@@ -117,6 +128,17 @@ button:hover {
 
 button:active {
   transform: scale(0.975);
+}
+
+footer {
+  text-align: center;
+  padding: 0.5rem 2rem;
+  font-size: 0.9rem;
+  color: #111;
+}
+
+footer small {
+  color: #aaa;
 }
 
 .button_active {
