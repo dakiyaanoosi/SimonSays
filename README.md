@@ -34,7 +34,7 @@ An interactive memory-based game inspired by the classic **Simon Says**, built u
 
 ### Keyboard Controls
 
-This Simon Says game can also be played using the keyboard for a smoother and faster experience
+This Simon Says game can also be played using the keyboard for a smoother and faster experience.
 
 | Key     | Action                       |
 | ------- | ---------------------------- |
