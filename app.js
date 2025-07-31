@@ -146,11 +146,10 @@ function buttonFlash(btn) {
     btn.classList.add("flash");
   }, 100);
   timeouts.push(flashTimeout);
-  const flashTimeout2 = setTimeout(function () {
+  setTimeout(function () {
     executing = false;
     if (btn) btn.classList.remove("flash");
   }, 500);
-  timeouts.push(flashTimeout2);
 }
 
 for (let btn of btns) {
