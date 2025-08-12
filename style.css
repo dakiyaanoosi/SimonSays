@@ -160,12 +160,11 @@ button {
 }
 
 button:hover {
-  transform: scale(1.0225);
   cursor: pointer;
 }
 
 button:active {
-  transform: scale(0.975);
+  transform: scale(0.970);
 }
 
 footer div {
