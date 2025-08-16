@@ -32,20 +32,21 @@ An interactive memory-based game inspired by the classic **Simon Says**, built u
 
 - Game Over → Appears when you make a mistake.
 
-### Keyboard Controls
-
-This Simon Says game can also be played using the keyboard for a smoother and faster experience.
-
-| Key     | Action                       |
-| ------- | ---------------------------- |
-| `Enter` | **Start / Restart** the game |
-| `R`     | Select **Red** pad           |
-| `Y`     | Select **Yellow** pad        |
-| `B`     | Select **Blue** pad          |
-| `G`     | Select **Green** pad         |
-
 ### Play Sequence
 
 - When enabled, the game **replays the entire color sequence** after every correct level.
 - This helps players recall the full pattern — just like the original **classic Simon Says** game!
 - The **Play Sequence** checkbox state is saved using `localStorage`, so the browser remembers your choice even after refreshing or reopening the game.
+
+### Keyboard Controls
+
+This Simon Says game can also be played using the keyboard for a smoother and faster experience.
+
+| Key     | Action                               |
+| ------- | -------------------------------------|
+| `Enter` | **Start / Restart** the game         |
+| `R`     | Select **Red** pad                   |
+| `Y`     | Select **Yellow** pad                |
+| `B`     | Select **Blue** pad                  |
+| `G`     | Select **Green** pad                 |
+| `C`     | Toggle **Play Sequence** checkbox   |

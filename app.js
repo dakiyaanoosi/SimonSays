@@ -9,7 +9,7 @@ let userSeq = [];
 let playingSeq = false;
 let timeouts = [];
 
-const colors = ["red", "yellow", "blue", "green"];
+const colors = ["red", "green", "yellow", "blue"];
 const audio = [
   new Audio("assets/Start.mp3"),
   new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"),
@@ -32,6 +32,13 @@ checkbox.addEventListener("change", function () {
   localStorage.setItem("checkBoxValue", this.checked);
 });
 
+document.addEventListener("keyup", (event) => {
+  if (event.code === "KeyC") {
+    checkbox.checked = !checkbox.checked;
+    localStorage.setItem("checkBoxValue", checkbox.checked);
+  }
+});
+
 const button = document.querySelector("button");
 const display = document.querySelector(".display");
 const scr = document.querySelector("#scr");
@@ -46,9 +53,9 @@ if (localStorage.getItem("highScore")) {
 const keyMap = {
   Enter: { element: button, class: "button_active" },
   KeyR: { element: btns[0], class: "btn_active" },
-  KeyY: { element: btns[1], class: "btn_active" },
-  KeyB: { element: btns[2], class: "btn_active" },
-  KeyG: { element: btns[3], class: "btn_active" },
+  KeyG: { element: btns[1], class: "btn_active" },
+  KeyY: { element: btns[2], class: "btn_active" },
+  KeyB: { element: btns[3], class: "btn_active" },
 };
 
 document.addEventListener("keydown", function (event) {

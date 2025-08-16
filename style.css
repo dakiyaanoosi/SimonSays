@@ -123,20 +123,20 @@ main {
 
 .yellow {
   background-color: #ffd700;
-  border-radius: 4% 4% 4% 100%;
+  border-radius: 4% 100% 4% 4%;
   box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+  margin-bottom: clamp(0.5rem, 0.7vw, 1rem);
 }
 
 .blue {
   background-color: #4d4dff;
-  border-radius: 4% 100% 4% 4%;
-  margin-bottom: clamp(0.5rem, 0.7vw, 1rem);
+  border-radius: 4% 4% 100% 4%;
   box-shadow: 0 0 15px rgba(50, 50, 255, 0.8);
 }
 
 .green {
   background-color: #3c3;
-  border-radius: 4% 4% 100%;
+  border-radius: 4% 4% 4% 100%;
   box-shadow: 0 0 15px rgba(30, 200, 30, 0.8);
 }
 
